@@ -1,32 +1,34 @@
-// linea seach , if elem found give its index , else return -1
 #include<iostream>
 using namespace std;
+int indexValue(int n,int arr[], int search)
+{
+    int search, index = -1;
+    for ( int i=0;i<n;i++ )
+    {
+        if(search==arr[i])
+        {
+            index=i;
+            break;
+        }
+    }
+    return index;
+}
 int main()
 {
-    int n;
-    cout<<"Enter size of arr: ";
-    cin>>n;
-    int arr[n];
-    cout<<"Enter elem in arr: \n";
-    for(int i=0;i<n;i++)
+    int a;
+    cout<<"Enter the size of arr: ";
+    cin>>a;
+    int brr[a];
+    cout<<"Enter elements in arr: \n";
+    for(int i=0;i<a;i++)
     {
-        cin>>arr[i];
+        cin>>brr[i];
     }
-    int search; // 10, 12, 70, 20, 30 
+    int pearch;
     cout<<"Enter elem to search: ";
-    cin>>search;
-    int index=-1;
-    for(int i=0;i<n;i++)
-    {
-        if(search == arr[i]) 
-          {
-            index = i;
-            break;
-          }
-    }
-    if(index != -1)
-    cout<<"Elem index: "<<index<<endl;
+    cin>>pearch;
+    int pindex = indexValue(a, brr, pearch); // function call to indexValue function again
+    // this is for the function brr to arr & pearch to search in the indexValue
+    if(pindex != -1) cout<<"Index : "<<pindex<<endl;
     else cout<<"-1"<<endl;
-    return 0;
 }
-
